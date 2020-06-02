@@ -1,0 +1,24 @@
+[versionner]
+file = ./VERSION
+;up_part= patch
+;default_init_version = 1.0.0
+;default_increase_value = 1
+
+[vcs]
+engine = git
+tag = yes
+tag_params =
+commit_message = '%(version)s'
+
+[file:coresender/__init__.py]
+enabled = true
+match = line
+search = ^\s*__version__\s*=.*$
+replace = __version__ = '%(version)s'
+
+[file:setup.py]
+enabled = true
+match = line
+search = \bversion\s*=.*$
+replace = version='%(version)s',
+encoding = utf-8
