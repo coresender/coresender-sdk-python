@@ -1,11 +1,9 @@
 #!/usr/bin/env python
 
 import os.path
-from setuptools import setup
+from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
-
-packages = ['coresender']
 
 requires = [
     'httpx==0.12.0',
@@ -22,14 +20,14 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 
 setup(
     name='coresender',
-    version='1.0.0',
+    version='1.0.1',
     description='Coresender API for sending email',
     long_description=readme,
     long_description_content_type='text/markdown',
     author='Marcin Sztolcman',
     author_email='opensource@coresender.com',
     url='https://coresender.com',
-    packages=packages,
+    packages=find_packages(),
     package_data={'': ['LICENSE', ]},
     package_dir={'coresender': 'coresender'},
     include_package_data=True,
