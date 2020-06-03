@@ -85,6 +85,17 @@ if __name__ == '__main__':
 
 ```
 
+### Environment variables
+
+Instead of putting sending account credentials directly in the code, you may want to put them in your environment variables:
+
+```shell
+CORESENDER_SENDING_API_ID=<<INSERT CORESENDER SENDING ACCOUNT ID>>
+CORESENDER_SENDING_API_KEY=<<INSERT CORESENDER SENDING ACCOUNT API KEY>>
+```
+
+The library will detect it automatically and use the credentials stored as environment variables.
+
 ### Response
 
 The result of a method call is, by default, a domain object.
