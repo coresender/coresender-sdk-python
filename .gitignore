@@ -1,4 +1,5 @@
 /coresender.egg-info/
 /.idea
 /.venv
+/.env
 __pycache__
