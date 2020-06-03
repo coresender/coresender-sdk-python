@@ -22,7 +22,7 @@ def init(*, sending_account_key: str = None, sending_account_id: str = None, deb
 
     context.set_context(ctx)
 
-    if debug:
+    if debug or os.environ.get('CORESENDER_DEBUG', '').lower() in ('yes', 'true', '1'):
         configure_debug_logger()
 
 
