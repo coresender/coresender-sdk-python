@@ -29,7 +29,7 @@ async def main():
     coresender.init(
         sending_account_id='<<INSERT CORESENDER SENDING ACCOUNT ID>>',
         sending_account_key='<<INSERT CORESENDER SENDING ACCOUNT API KEY>>',
-        # debug=True # if True, then show some logs on stderr
+        # debug=True # if True, then show some logs on stderr, or use `CORESENDER_DEBUG` environment variable
     )
 
     # EXAMPLE 1 – Recommended
@@ -95,6 +95,8 @@ CORESENDER_SENDING_API_KEY=<<INSERT CORESENDER SENDING ACCOUNT API KEY>>
 ```
 
 The library will detect it automatically and use the credentials stored as environment variables.
+
+You can also use `CORESENDER_DEBUG` environment variable to toggle debug logs.
 
 ### Response
 
