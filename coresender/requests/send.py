@@ -30,16 +30,21 @@ class SendEmail(CoresenderApiRequest):
             raise errors.CoresenderError('No recipient address specified')
 
     def add_to_batch(self,
-       from_email: str, from_name: str = None,
-       to: List[Dict[str, str]] = None,
-       to_email: str = None, to_name: str = None,
-       subject: str = None, body_html: str = None, body_text: str = None,
-       custom_id: str = None, custom_id_unique: bool = False,
-       track_opens: bool = False, track_click: bool = False,
-       list_id: str = None, list_unsubscribe: str = None
+        from_email: str, from_name: str = None,
+        to: List[Dict[str, str]] = None,
+        to_email: str = None, to_name: str = None,
+        subject: str = None, body_html: str = None, body_text: str = None,
+        reply_to: List[Dict[str, str]] = None,
+        reply_to_email: str = None, reply_to_name: str = None,
+        custom_id: str = None, custom_id_unique: bool = False,
+        track_opens: bool = False, track_click: bool = False,
+        list_id: str = None, list_unsubscribe: str = None
     ) -> None:
         if not to:
             to = [{'email': to_email, 'name': to_name}]
+
+        if not reply_to:
+            reply_to = [{'email': reply_to_email, 'name': reply_to_name}]
 
         email = {
             "from": {
@@ -47,6 +52,7 @@ class SendEmail(CoresenderApiRequest):
                 "name": from_name,
             },
             "to": to,
+            "reply_to": reply_to,
             "subject": subject,
             "body": {
                 "html": body_html,

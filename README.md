@@ -41,6 +41,8 @@ async def main():
         from_name='sender',
         to_email='recipient-1@example.net',
         to_name='Recipient-1',
+        reply_to_email='reply-address@example.com',
+        reply_to_name='sender',
         subject='Coresender test ' + custom_id,
         body_text='Hello,\nWorld!',
         body_html='<strong>Hello</strong>,<br>World!',

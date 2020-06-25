@@ -17,6 +17,12 @@ def _get_email_structure(data):
                 'name': data.get('to_name', None),
             }
        ],
+       'reply_to': [
+           {
+               'email': data.get('reply_to_email', None),
+               'name': data.get('reply_to_name', None),
+           }
+       ],
        'subject': data.get('subject', None),
        'body': {
            'html': data.get('body_html', None),
