@@ -20,7 +20,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 
 setup(
     name='coresender',
-    version='1.0.2',
+    version='1.0.3',
     description='Coresender API for sending email',
     long_description=readme,
     long_description_content_type='text/markdown',
