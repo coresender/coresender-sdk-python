@@ -183,10 +183,11 @@ class CoresenderApiRequest:
         raise NotImplementedError()
 
     def get_full_url(self) -> str:
+        ctx = get_context()
         url_prefix = '%(proto)s://%(host)s:%(port)d/v%(version)s/%(uri)s' % {
-            'proto': self._api_proto,
-            'host': self._api_host,
-            'port': self._api_port,
+            'proto': ctx.api_proto or self._api_proto,
+            'host': ctx.api_host or self._api_host,
+            'port': ctx.api_port or self._api_port,
             'version': self._api_version,
             'uri': self._api_method_uri,
         }
